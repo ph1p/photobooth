@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <a href="/" class="headline">
+        <p>
+            PHOTOBOOTH FEED
+        </p>
+    </a>
+    {{#if currentPage}}
+        <div class="currentPage">
+            - Seite {{currentPage}} -
+        </div>
+    {{/if}}
+
+    {{#unless images}}
+        <div class="no-images">
+            <img src="/images/john.gif" alt="" />
+        </div>
+        {{else}}
+            {{#each images}}
+                <div class="section">
+                    <a href="#" data-featherlight="uploads/{{this.image}}.{{this.ext}}">
+                        <div class="image" style="background-image: url(uploads/{{this.image}}-c.{{this.ext}})">
+                            <div class="date">{{dateFormat this.date "HH:mm"}}</div>
+                        </div>
+                    </a>
+                    <div class="like-post {{#if this.liked}}like-post--active{{/if}}" data-id="{{this._id}}">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <div class="like-post__count">{{this.likes}}</div>
+                    </div>
+                    <a class="download" href="/download/{{this._id}}">download</a>
+                </div>
+            {{/each}}
+    {{/unless}}
+
+    <div class="pagination">
+        {{#if prevPage}}
+            <a class="prevPage" href="/{{prevPage}}">zurück</a>
+        {{/if}}
+        {{#if nextPage}}
+            <a class="nextPage" href="/{{nextPage}}">weiter</a>
+        {{/if}}
+    </div>
+</div>

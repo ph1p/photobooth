@@ -1,0 +1,10 @@
+.git/
+.gitignore
+~*
+.DS_Store
+node_modules/
+.idea/
+*.jpg
+*.jpeg
+photobooth/exclude_rsync
+photobooth/.idea/

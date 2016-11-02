@@ -1,0 +1,12 @@
+{
+  "development": {
+    "upload_path": "../public/uploads/",
+    "port": 3000,
+    "secret": "123456"
+  },
+  "production": {
+    "upload_path": "../public/uploads/",
+    "port": 80,
+    "secret": "654321"
+  }
+}

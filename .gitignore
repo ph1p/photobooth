@@ -1,0 +1,5 @@
+database.db
+server/public/uploads
+server/build
+server/node_modules
+yarn.lock
